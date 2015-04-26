@@ -22,7 +22,7 @@ protected: // create from serialization only
 public:
 	CWinccDoc* GetDocument();
 	HANDLE handler;
- 	char buffer[30];
+ 	char buffer[100];
 	HANDLE InitCom(char* comName);
 	int ReadData(HANDLE handler, char* buffer);
 	int WriteData(HANDLE handler, char* buffer);
@@ -66,6 +66,7 @@ protected:
 	afx_msg void OnCom6();
 	afx_msg void OnCom7();
 	afx_msg void OnCom8();
+	afx_msg void OnSend();
 	//}}AFX_MSG
 	DECLARE_MESSAGE_MAP()
 };

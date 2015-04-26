@@ -32,6 +32,7 @@ BEGIN_MESSAGE_MAP(CWinccView, CView)
 	ON_COMMAND(IDM_COM6, OnCom6)
 	ON_COMMAND(IDM_COM7, OnCom7)
 	ON_COMMAND(IDM_COM8, OnCom8)
+	ON_COMMAND(IDM_SEND, OnSend)
 	//}}AFX_MSG_MAP
 END_MESSAGE_MAP()
 
@@ -43,7 +44,7 @@ CWinccView::CWinccView()
 	// TODO: add construction code here
 	flag=0;
 	handler=NULL;
-	memset(buffer,0,30);
+	memset(buffer,0,100);
 }
 
 CWinccView::~CWinccView()
@@ -101,7 +102,7 @@ void CWinccView::OnQuery()
 		set.DestroyWindow();
 		query.ShowWindow(SW_SHOW);
 		flag=1;
-		SetTimer(1,2000,NULL);
+		SetTimer(1,1000,NULL);
 	}
 }
 
@@ -125,6 +126,7 @@ int CWinccView::OnCreate(LPCREATESTRUCT lpCreateStruct)
 	
 	// TODO: Add your specialized creation code here
 	query.c=0;
+ 	set.s=0;
 	OnQuery();
 	return 0;
 }
@@ -133,16 +135,31 @@ void CWinccView::OnTimer(UINT nIDEvent)
 {
 	// TODO: Add your message handler code here and/or call default
 	if(handler!=NULL)
-	{
+	{	
+		memset(buffer,0,100);
 		ReadData(handler,buffer);
-		memset(buffer,0,30);
-		*buffer='*';
-		*(buffer+1)=query.c+1;//由于单选默认从0开始编号，0的话会被当作结束位，遂+1处理
+		if(strlen(buffer)!=0)
+			query.Show(buffer);
+		memset(buffer,0,100);
+		query.UpdateData();
+	 	buffer[0]='*';
+ 		buffer[1]=query.c+1;//由于单选默认从0开始编号，0的话会被当作结束位，遂+1处理
 		WriteData(handler, buffer);
-		memset(buffer,0,30);
+
 	}
 	CView::OnTimer(nIDEvent);
 }
+
+void CWinccView::OnSend() 
+{
+	// TODO: Add your command handler code here
+	memset(buffer,0,100);
+	set.Get(buffer);
+	WriteData(handler, buffer);
+}
+
+
+
 
 void CWinccView::OnCom1() 
 {
@@ -232,9 +249,9 @@ HANDLE CWinccView::InitCom(char* comName)
 
 int CWinccView::ReadData(HANDLE handler, char* buffer)  
 {  
-    char readBuffer[30];  
-    memset(readBuffer, 0, 30);  
-    DWORD wCount= 30;//读取的字节数  
+    char readBuffer[100];  
+    memset(readBuffer, 0, 100);  
+    DWORD wCount= 100;//读取的字节数  
     BOOL bReadStat;  
   
     bReadStat = ReadFile(handler, readBuffer, wCount, &wCount, NULL);  
@@ -255,8 +272,8 @@ int CWinccView::WriteData(HANDLE handler, char* buffer)
     COMSTAT ComStat;  
     DWORD dwErrorFlags;  
     BOOL bWriteStat;  
-    ClearCommError(handler, &dwErrorFlags, &ComStat);  
-    dwBytesWrite = strlen(buffer);  
+    ClearCommError(handler, &dwErrorFlags, &ComStat); 
+	dwBytesWrite = strlen(buffer);  
     bWriteStat=WriteFile(handler, buffer, dwBytesWrite, &dwBytesWrite, NULL);  
     if(!bWriteStat)  
     {  
@@ -265,3 +282,8 @@ int CWinccView::WriteData(HANDLE handler, char* buffer)
     }  
     return 0;  
 }  
+
+
+	
+
+

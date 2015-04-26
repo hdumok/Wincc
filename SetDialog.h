@@ -14,12 +14,18 @@ class CSetDialog : public CDialog
 {
 // Construction
 public:
+	void Get(char* buffer);
 	CSetDialog(CWnd* pParent = NULL);   // standard constructor
 
 // Dialog Data
 	//{{AFX_DATA(CSetDialog)
 	enum { IDD = IDD_SET };
-		// NOTE: the ClassWizard will add data members here
+	int		m_edit1;
+	int		m_edit2;
+	int		m_edit3;
+	int		m_edit4;
+	int		m_edit5;
+	int		s;
 	//}}AFX_DATA
 
 
@@ -35,7 +41,6 @@ protected:
 
 	// Generated message map functions
 	//{{AFX_MSG(CSetDialog)
-		// NOTE: the ClassWizard will add member functions here
 	//}}AFX_MSG
 	DECLARE_MESSAGE_MAP()
 };

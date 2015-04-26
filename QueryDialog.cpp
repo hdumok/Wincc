@@ -52,13 +52,13 @@ END_MESSAGE_MAP()
 /////////////////////////////////////////////////////////////////////////////
 // CQueryDialog message handlers
 
-void CQueryDialog::Show(char* buffer)
+void CQueryDialog::Show(char* buffer)//获取从机发过来的数据并处理 再显示在上位机上
 {
 	UpdateData();
-	m_show1=*buffer*256+*(buffer+1);
-	m_show2=*(buffer+2)*256+*(buffer+3);
-	m_show3=*(buffer+4)*256+*(buffer+5);
-	m_show4=*(buffer+6)*256+*(buffer+7);
-	m_show5=*(buffer+8)*256+*(buffer+9);
+	m_show1=buffer[0];
+	m_show2=buffer[1];
+	m_show3=buffer[2];
+	m_show4=buffer[3];
+	m_show5=buffer[4];
 	UpdateData(FALSE);
 }

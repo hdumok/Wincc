@@ -2,7 +2,7 @@
 
 [General Info]
 Version=1
-LastClass=CWinccView
+LastClass=CSetDialog
 LastTemplate=CDialog
 NewFileInclude1=#include "stdafx.h"
 NewFileInclude2=#include "Wincc.h"
@@ -15,9 +15,9 @@ Class3=CWinccView
 Class4=CMainFrame
 
 ResourceCount=4
-Resource1=IDR_MAINFRAME
-Resource2=IDD_QUERY
-Resource3=IDD_ABOUTBOX
+Resource1=IDD_QUERY
+Resource2=IDD_ABOUTBOX
+Resource3=IDR_MAINFRAME
 Class5=CAboutDlg
 Class6=CQueryDialog
 Class7=CSetDialog
@@ -34,15 +34,16 @@ Type=0
 HeaderFile=WinccDoc.h
 ImplementationFile=WinccDoc.cpp
 Filter=N
+LastObject=CWinccDoc
 
 [CLS:CWinccView]
 Type=0
 HeaderFile=WinccView.h
 ImplementationFile=WinccView.cpp
-Filter=C
+Filter=D
 BaseClass=CView
 VirtualFilter=VWC
-LastObject=IDM_COM8
+LastObject=IDM_SEND
 
 
 [CLS:CMainFrame]
@@ -76,17 +77,18 @@ Control4=IDOK,button,1342373889
 [MNU:IDR_MAINFRAME]
 Type=1
 Class=CMainFrame
-Command1=IDM_QUERY
-Command2=IDM_SET
-Command3=IDM_COM1
-Command4=IDM_COM2
-Command5=IDM_COM3
-Command6=IDM_COM4
-Command7=IDM_COM5
-Command8=IDM_COM6
-Command9=IDM_COM7
-Command10=IDM_COM8
-CommandCount=10
+Command1=IDM_COM1
+Command2=IDM_COM2
+Command3=IDM_COM3
+Command4=IDM_COM4
+Command5=IDM_COM5
+Command6=IDM_COM6
+Command7=IDM_COM7
+Command8=IDM_COM8
+Command9=IDM_QUERY
+Command10=IDM_SET
+Command11=IDM_SEND
+CommandCount=11
 
 [ACL:IDR_MAINFRAME]
 Type=1
@@ -143,37 +145,36 @@ Control29=IDC_C15,button,1342177289
 [DLG:IDD_SET]
 Type=1
 Class=CSetDialog
-ControlCount=30
+ControlCount=29
 Control1=IDC_STATIC,static,1342308864
 Control2=IDC_STATIC,button,1342177287
-Control3=IDC_S0,button,1342308361
-Control4=IDC_S1,button,1342177289
-Control5=IDC_S3,button,1342177289
-Control6=IDC_STATIC,button,1342177287
-Control7=IDC_EDIT1,edit,1350631552
-Control8=IDC_EDIT2,edit,1350631552
-Control9=IDC_EDIT3,edit,1350631552
-Control10=IDC_EDIT4,edit,1350631552
-Control11=IDC_STATIC,static,1342308352
+Control3=IDC_STATIC,button,1342177287
+Control4=IDC_EDIT1,edit,1350631552
+Control5=IDC_EDIT2,edit,1350631552
+Control6=IDC_EDIT3,edit,1350631552
+Control7=IDC_EDIT4,edit,1350631552
+Control8=IDC_STATIC,static,1342308352
+Control9=IDC_STATIC,static,1342308352
+Control10=IDC_STATIC,static,1342308352
+Control11=IDC_EDIT5,edit,1350631552
 Control12=IDC_STATIC,static,1342308352
-Control13=IDC_Send,button,1342242816
-Control14=IDC_STATIC,static,1342308352
-Control15=IDC_EDIT5,edit,1350631552
-Control16=IDC_STATIC,static,1342308352
-Control17=IDC_STATIC,static,1342308352
-Control18=IDC_S2,button,1342177289
-Control19=IDC_S4,button,1342177289
-Control20=IDC_S6,button,1342177289
-Control21=IDC_S5,button,1342177289
-Control22=IDC_S7,button,1342177289
-Control23=IDC_S8,button,1342177289
-Control24=IDC_S9,button,1342177289
-Control25=IDC_S11,button,1342177289
-Control26=IDC_S10,button,1342177289
-Control27=IDC_S12,button,1342177289
-Control28=IDC_S14,button,1342177289
-Control29=IDC_S13,button,1342177289
-Control30=IDC_S15,button,1342177289
+Control13=IDC_STATIC,static,1342308352
+Control14=IDC_S1,button,1342308361
+Control15=IDC_S2,button,1342177289
+Control16=IDC_S3,button,1342177289
+Control17=IDC_S4,button,1342177289
+Control18=IDC_S5,button,1342177289
+Control19=IDC_S6,button,1342177289
+Control20=IDC_S7,button,1342177289
+Control21=IDC_S8,button,1342177289
+Control22=IDC_S9,button,1342177289
+Control23=IDC_S10,button,1342177289
+Control24=IDC_S11,button,1342177289
+Control25=IDC_12,button,1342177289
+Control26=IDC_S13,button,1342177289
+Control27=IDC_S14,button,1342177289
+Control28=IDC_S15,button,1342177289
+Control29=IDC_S16,button,1342177289
 
 [CLS:CQueryDialog]
 Type=0
@@ -181,7 +182,7 @@ HeaderFile=QueryDialog.h
 ImplementationFile=QueryDialog.cpp
 BaseClass=CDialog
 Filter=D
-LastObject=CQueryDialog
+LastObject=IDC_C0
 VirtualFilter=dWC
 
 [CLS:CSetDialog]
@@ -190,5 +191,6 @@ HeaderFile=SetDialog.h
 ImplementationFile=SetDialog.cpp
 BaseClass=CDialog
 Filter=D
-LastObject=CSetDialog
+LastObject=IDC_EDIT1
+VirtualFilter=dWC
 

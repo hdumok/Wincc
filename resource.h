@@ -26,7 +26,6 @@
 #define IDC_C4                          1009
 #define IDC_EDIT4                       1010
 #define IDC_C6                          1010
-#define IDC_Send                        1011
 #define IDC_C5                          1011
 #define IDC_S7                          1012
 #define IDC_EDIT5                       1013
@@ -50,8 +49,10 @@
 #define IDC_C13                         1031
 #define IDC_C14                         1032
 #define IDC_C15                         1033
+#define IDC_SAVE                        1034
+#define IDC_12                          1056
+#define IDC_S16                         1060
 #define IDM_QUERY                       32771
-#define IDM_SET                         32772
 #define IDM_COM1                        32774
 #define IDM_COM2                        32775
 #define IDM_COM3                        32776
@@ -60,6 +61,8 @@
 #define IDM_COM6                        32779
 #define IDM_COM7                        32780
 #define IDM_COM8                        32781
+#define IDM_SET                         32782
+#define IDM_SEND                        32783
 
 // Next default values for new objects
 // 
@@ -67,8 +70,8 @@
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_3D_CONTROLS                     1
 #define _APS_NEXT_RESOURCE_VALUE        132
-#define _APS_NEXT_COMMAND_VALUE         32782
-#define _APS_NEXT_CONTROL_VALUE         1034
+#define _APS_NEXT_COMMAND_VALUE         32784
+#define _APS_NEXT_CONTROL_VALUE         1061
 #define _APS_NEXT_SYMED_VALUE           101
 #endif
 #endif

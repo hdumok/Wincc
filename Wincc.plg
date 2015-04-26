@@ -6,6 +6,21 @@
 --------------------Configuration: Wincc - Win32 Debug--------------------
 </h3>
 <h3>Command Lines</h3>
+Creating temporary file "C:\Users\mok\AppData\Local\Temp\RSP5276.tmp" with contents
+[
+/nologo /subsystem:windows /incremental:yes /pdb:"Debug/Wincc.pdb" /debug /machine:I386 /out:"Debug/Wincc.exe" /pdbtype:sept 
+.\Debug\MainFrm.obj
+.\Debug\QueryDialog.obj
+.\Debug\SetDialog.obj
+.\Debug\StdAfx.obj
+.\Debug\Wincc.obj
+.\Debug\WinccDoc.obj
+.\Debug\WinccView.obj
+.\Debug\Wincc.res
+]
+Creating command line "link.exe @C:\Users\mok\AppData\Local\Temp\RSP5276.tmp"
+<h3>Output Window</h3>
+Linking...
 
 
 
